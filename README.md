@@ -1,6 +1,5 @@
-# for5xcampusPractise
-  
-"更新資料夾"  
-git remote add origin https://github.com/YuHsinTengCindy/for5xcampusPractise.git  
+檔案上傳指令備註。
+
 git branch -M main  
+git remote add origin https://github.com/YuHsinTengCindy/TEST.git  
 git push -u origin main  
