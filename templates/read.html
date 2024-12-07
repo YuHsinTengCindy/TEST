@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Details</h1>
+<div>
+    <h2>{{ product.title }}</h2>
+    <p><strong>Price:</strong>{{ product.price }}</p>
+    <p><strong>Description:</strong>{{ product.description }}</p>
+</div>
+
+<div>
+    <a href="{% url 'products:index' %}">Back to Index</a>
+    <a href="{% url 'products:update' product.id %}">Edit</a>
+
+    <!-- 修改了删除按钮的 URL 名称 -->
+    <form action="{% url 'products:delete' product.id %}" method="POST">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+    </form>
+</div>
+
+{% endblock content %}

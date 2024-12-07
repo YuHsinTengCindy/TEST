@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Edit</h1>
+<form action="{% url 'products:update' product.id %}" method="post">
+    {% csrf_token %}
+    <div>
+        <label for="title">Title:</label>
+        <input type="text" name="title" value="{{ product.title }}">
+    </div>
+    
+    <div>
+        <label for="price">Price:</label>
+        <input type="text" name="price" value="{{ product.price }}">
+    </div>
+    
+    <div>
+        <label for="description">Description:</label>
+        <textarea name="description" >{{ product.description }}</textarea>
+    </div>
+
+    <button type="submit">Update</button>
+</form>
+
+<div>
+    <a href="{% url 'products:read' product.id %}">
+        {{ product.title }}
+    </a>
+</div>
+
+{% endblock content %}
